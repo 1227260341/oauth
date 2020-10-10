@@ -1,0 +1,103 @@
+server:
+  port: 1002
+
+spring:
+  application:
+    name: oauth
+  #  profiles:
+  #    active: sit
+  jmx:
+    default-domain: e-oauth
+  resources.static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/templates/,classpath:/public/,file:/www/ecampus/static/
+    #  datasource:
+    #    #type: com.zaxxer.hikari.HikariDataSource
+    #    driverClassName: com.mysql.jdbc.Driver
+    ##    url: jdbc:mysql://192.168.3.30:3306/ecampus_new?characterEncoding=utf-8
+    #    url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&serverTimezone=UTC
+    #    username: root
+    #    password: root
+    ##    url: jdbc:mysql://117.169.66.118:3306/ecampus_new?characterEncoding=utf-8
+    ##    username: test
+    ##    password: 21szxymysql
+    #    type: com.alibaba.druid.pool.DruidDataSource
+    #    initialSize: 5
+    #    minIdle: 5
+    #    maxActive: 20
+    #    maxWait: 60000
+    #    timeBetweenEvictionRunsMillis: 60000
+    #    minEvictableIdleTimeMillis: 30000
+    #    validationQuery: select 'x'
+    #    testWhileIdle: true
+    #    testOnBorrow: false
+    #    testOnReturn: false
+    #    poolPreparedStatements: true
+    #    maxPoolPreparedStatementPerConnectionSize: 20
+    #    filters: stat,wall,slf4j
+    #    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+#redis
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+    timeout: 10000
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: 60
+        max-idle: 8
+        min-idle: 0
+
+
+# 打印sql
+#logging:
+#  level:
+#     com.zj.demo.mapper : debug
+
+
+#mybatis
+#mybatis:
+#  config-location: classpath:mybatis-config.xml
+#  type-aliases-package: com.zj.demo.entity
+#  type-handlers-package: com.zj.demo.mapper
+#  mapper-locations: classpath:/mapper/*.xml
+
+
+#mybatis-plus:
+#  #外部化xml配置
+#  #  config-location: classpath:mybatis-config.xml
+#  mapper-locations: classpath*:/mapper/**Mapper.xml
+#  #实体扫描，多个package用逗号或者分号分隔
+#  typeAliasesPackage: com.zj.demo.entity
+#  global-config:
+#    #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+#    id-type: 2
+#    #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+#    field-strategy: 2
+#    #驼峰下划线转换
+#    db-column-underline: true
+#    #刷新mapper 调试神器
+#    refresh-mapper: true
+#    #数据库大写下划线转换
+#    #capital-mode: true
+#    #序列接口实现类配置
+#    #key-generator: com.baomidou.springboot.xxx
+#    #逻辑删除配置（下面3个配置）
+#    logic-delete-value: 0
+#    logic-not-delete-value: 1
+#    #自定义SQL注入器
+#    #sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+#    #自定义填充策略接口实现
+#    #meta-object-handler: com.baomidou.springboot.xxx
+#
+#  #此处得 与 config-location 配置得 是一样得， 不能同时 存在
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    cache-enabled: false
+#    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    #主键自动生成并获取
+#    use-generated-keys: true
+
+
